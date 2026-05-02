@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="SkyBridge Technologies Resources - Technical documentation, blog, and case studies.">
+    <title>Resources | SkyBridge Technologies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .resources-hero {
+            padding: 180px 0 100px;
+            background: #f8fafc;
+            text-align: center;
+        }
+
+        .resources-grid-page {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 80px 0;
+        }
+
+        .resource-page-card {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .resource-page-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .resources-grid-page {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Navigation (Same as Index) -->
+    <header id="header">
+        <nav class="container nav-wrapper">
+            <div class="logo-container">
+                <div class="logo-placeholder">
+                    <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="url(#logo-gradient)" />
+                        <path d="M12 28L20 12L28 28" stroke="white" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M16 20H24" stroke="white" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <defs>
+                            <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#3D5AFE" />
+                                <stop offset="1" stop-color="#00C6FF" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <a href="Index.html" class="brand-name">SkyBridge <span class="accent">Technologies</span></a>
+            </div>
+
+            <div class="nav-links-container" id="nav-links">
+                <ul class="main-nav">
+                    <li class="has-dropdown" data-dropdown="solutions">
+                        <a href="Index.html#solutions" class="nav-item">Solutions <span class="nav-arrow"></span></a>
+                    </li>
+                    <li class="has-dropdown" data-dropdown="services">
+                        <a href="Index.html#services" class="nav-item">Services <span class="nav-arrow"></span></a>
+                    </li>
+                    <li class="has-dropdown" data-dropdown="resources">
+                        <a href="Resources .html" class="nav-item">Resources <span class="nav-arrow"></span></a>
+                    </li>
+                    <li><a href="Portfolio.html" class="nav-item">Portfolio</a></li>
+                </ul>
+            </div>
+
+            <div class="nav-actions">
+                <a href="Admin.html" class="btn btn-outline">Admin</a>
+                <a href="Index.html#contact" class="btn btn-primary">Get Started</a>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Dropdown Popover Container -->
+        <div class="dropdown-popover" id="dropdown-popover">
+            <div class="popover-bg"></div>
+            <div class="popover-arrow"></div>
+            <div class="popover-content">
+                <!-- Solutions Dropdown -->
+                <div class="dropdown-section" data-section="solutions">
+                    <div class="dropdown-grid">
+                        <div class="grid-item">
+                            <div class="item-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                                </svg></div>
+                            <div class="item-text">
+                                <h3>Cloud Modernization</h3>
+                                <p>Bridge legacy systems with scalable cloud tech.</p>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="item-icon cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                                </svg></div>
+                            <div class="item-text">
+                                <h3>AI & Integration</h3>
+                                <p>Implement intelligent layers for automation.</p>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="item-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                </svg></div>
+                            <div class="item-text">
+                                <h3>Cyber Security</h3>
+                                <p>Proactive defense for digital assets.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services Dropdown -->
+                <div class="dropdown-section" data-section="services">
+                    <div class="simple-list">
+                        <div class="list-item">
+                            <div class="item-icon small blue"></div>
+                            <span>Software Development</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="item-icon small cyan"></div>
+                            <span>UI/UX Interface Design</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="item-icon small purple"></div>
+                            <span>Digital Transformation</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="item-icon small indigo"></div>
+                            <span>Technical Consulting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resources Dropdown -->
+                <div class="dropdown-section" data-section="resources">
+                    <div class="resources-layout">
+                        <div class="main-links">
+                            <div class="grid-item compact">
+                                <div class="item-icon blue small"></div>
+                                <span>Documentation</span>
+                            </div>
+                            <div class="grid-item compact">
+                                <div class="item-icon cyan small"></div>
+                                <span>API Reference</span>
+                            </div>
+                        </div>
+                        <div class="side-content">
+                            <h4>Latest from SkyBridge</h4>
+                            <p>Scaling AI in 2024: A comprehensive guide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="resources-hero">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <span class="section-tagline">Knowledge Hub</span>
+                    <h1 class="section-title">Technical <span class="text-gradient">Resources</span></h1>
+                    <p class="section-subtitle">Deep dives, documentation, and insights from the engineering team at
+                        SkyBridge.</p>
+                </div>
+
+                <div class="resources-grid-page">
+                    <div class="resource-page-card fade-in delay-1">
+                        <h3>API Documentation</h3>
+                        <p>Everything you need to integrate SkyBridge services into your platform.</p>
+                        <a href="#" class="btn btn-outline" style="margin-top: 20px;">View Docs</a>
+                    </div>
+                    <div class="resource-page-card fade-in delay-2">
+                        <h3>Engineering Blog</h3>
+                        <p>Insights on cloud architecture, AI integration, and the future of tech.</p>
+                        <a href="#" class="btn btn-outline" style="margin-top: 20px;">Read Blog</a>
+                    </div>
+                    <div class="resource-page-card fade-in delay-3">
+                        <h3>Case Studies</h3>
+                        <p>Explore how we've helped industry leaders transform their digital landscape.</p>
+                        <a href="#" class="btn btn-outline" style="margin-top: 20px;">Explore Stories</a>
+                    </div>
+                    <div class="resource-page-card fade-in delay-4">
+                        <h3>Whitepapers</h3>
+                        <p>Technical deep-dives into our security protocols and architectural standards.</p>
+                        <a href="#" class="btn btn-outline" style="margin-top: 20px;">Download PDF</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Same as Index) -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo-container">
+                    <div class="logo-placeholder">
+                        <svg width="24" height="24" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="url(#footer-logo-gradient)" />
+                            <path d="M12 28L20 12L28 28" stroke="white" stroke-width="3" />
+                            <defs>
+                                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="40" y2="40">
+                                    <stop stop-color="#3D5AFE" />
+                                    <stop offset="1" stop-color="#00C6FF" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <span class="brand-name">SkyBridge <span class="accent">Technologies</span></span>
+                </div>
+                <p class="footer-desc">Building the infrastructure for the digital era since 2020.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="#">Bridge API</a></li>
+                    <li><a href="#">Cloud Sync</a></li>
+                    <li><a href="#">Security Shield</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2024 SkyBridge Technologies. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

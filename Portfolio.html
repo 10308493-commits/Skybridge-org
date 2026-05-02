@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="SkyBridge Technologies Portfolio - Explore our premium digital solutions and successful projects.">
+    <title>Portfolio | SkyBridge Technologies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .projects-section {
+            padding: 32px 0 100px;
+            background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 32px;
+            align-items: stretch;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border: 1px solid rgba(148, 163, 184, 0.22);
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+        }
+
+        .project-mockup {
+            position: relative;
+            min-height: 240px;
+            padding: 22px;
+            background: linear-gradient(135deg, #1d4ed8 0%, #0f172a 100%);
+        }
+
+        .project-window {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            min-height: 196px;
+            background: rgba(255, 255, 255, 0.14);
+            border: 2px dashed rgba(255, 255, 255, 0.45);
+            border-radius: 22px;
+            padding: 18px;
+            backdrop-filter: blur(14px);
+            text-align: center;
+        }
+
+        .project-window-image {
+            padding: 0;
+            overflow: hidden;
+            border-style: solid;
+        }
+
+        .project-window-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 196px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .placeholder-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 16px;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        .placeholder-label {
+            margin: 0;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .placeholder-note {
+            margin: 8px 0 0;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .window-toolbar,
+        .mockup-layout,
+        .mockup-panel,
+        .mockup-list,
+        .mockup-stack,
+        .mockup-line {
+            display: none;
+        }
+
+        .window-toolbar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+
+        .window-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .project-content {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            gap: 14px;
+            padding: 28px;
+        }
+
+        .project-category {
+            display: inline-flex;
+            align-self: flex-start;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: #e0ecff;
+            color: #1d4ed8;
+            font-size: 0.84rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .project-name {
+            margin: 0;
+            font-size: 1.45rem;
+            line-height: 1.25;
+            color: #0f172a;
+        }
+
+        .project-description {
+            margin: 0;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        .project-content .btn {
+            align-self: flex-start;
+            margin-top: auto;
+        }
+
+        .projects-empty-state {
+            display: none;
+            margin-top: 32px;
+            padding: 24px 28px;
+            border: 1px dashed rgba(148, 163, 184, 0.45);
+            border-radius: 24px;
+            background: #ffffff;
+            color: #475569;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .projects-section {
+                padding: 20px 0 72px;
+            }
+
+        }
+
+        @media (max-width: 520px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Navigation (Stripe-Style) -->
+    <header id="header">
+        <nav class="container nav-wrapper">
+            <div class="logo-container">
+                <div class="logo-placeholder">
+                    <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="url(#logo-gradient)" />
+                        <path d="M12 28L20 12L28 28" stroke="white" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M16 20H24" stroke="white" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <defs>
+                            <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#3D5AFE" />
+                                <stop offset="1" stop-color="#00C6FF" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <a href="index.html" class="brand-name" style="text-decoration: none;">SkyBridge <span
+                        class="accent">Technologies</span></a>
+            </div>
+
+            <div class="nav-links-container" id="nav-links">
+                <ul class="main-nav">
+                    <li class="has-dropdown" data-dropdown="solutions">
+                        <a href="index.html#solutions" class="nav-item">Solutions <span class="nav-arrow"></span></a>
+                    </li>
+                    <li class="has-dropdown" data-dropdown="services">
+                        <a href="index.html#services" class="nav-item">Services <span class="nav-arrow"></span></a>
+                    </li>
+                    <li class="has-dropdown" data-dropdown="resources">
+                        <a href="Resources.html" class="nav-item">Resources <span class="nav-arrow"></span></a>
+                    </li>
+                    <li><a href="Portfolio.html" class="nav-item">Portfolio</a></li>
+                </ul>
+                <div class="mobile-menu-actions">
+                    <a href="Admin.html" class="btn btn-outline">Admin</a>
+                    <button onclick="openSignInModal()" class="btn-text">Sign In</button>
+                    <a href="index.html#contact" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+
+            <div class="nav-actions">
+                <div id="public-actions" class="public-nav-group fade-in">
+                    <a href="Admin.html" class="btn btn-outline">Admin</a>
+                    <button id="header-signin" onclick="openSignInModal()" class="btn-text">Sign In</button>
+                    <a id="header-getstarted" href="index.html#contact" class="btn btn-primary">Get Started</a>
+                </div>
+                <div class="user-profile-wrapper" id="user-profile-wrapper">
+                    <div class="user-profile" id="user-profile">
+                        <div class="user-avatar">JD</div>
+                        <span class="user-name">John Doe</span>
+                    </div>
+                    <div class="user-dropdown" id="user-dropdown">
+                        <div class="dropdown-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                            My Account
+                        </div>
+                        <div class="dropdown-item" id="settings-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="3" />
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                            </svg>
+                            Settings
+                        </div>
+                        <div class="dropdown-item logout" id="logout-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                                <polyline points="16 17 21 12 16 7" />
+                                <line x1="21" y1="12" x2="9" y2="12" />
+                            </svg>
+                            Log Out
+                        </div>
+                    </div>
+                </div>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Dropdown Popover Container -->
+        <div class="dropdown-popover" id="dropdown-popover">
+            <div class="popover-bg"></div>
+            <div class="popover-arrow"></div>
+            <div class="popover-content">
+                <!-- Solutions Dropdown -->
+                <div class="dropdown-section" data-section="solutions">
+                    <div class="dropdown-grid">
+                        <div class="grid-item">
+                            <div class="item-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                                </svg></div>
+                            <div class="item-text">
+                                <h3>Cloud Modernization</h3>
+                                <p>Bridge legacy systems with scalable cloud tech.</p>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="item-icon cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                                </svg></div>
+                            <div class="item-text">
+                                <h3>AI & Integration</h3>
+                                <p>Implement intelligent layers for automation.</p>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="item-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                </svg></div>
+                            <div class="item-text">
+                                <h3>Cyber Security</h3>
+                                <p>Proactive defense for digital assets.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services Dropdown -->
+                <div class="dropdown-section" data-section="services">
+                    <div class="simple-list">
+                        <div class="list-item">
+                            <div class="item-icon small blue"></div>
+                            <span>Software Development</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="item-icon small cyan"></div>
+                            <span>UI/UX Interface Design</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="item-icon small purple"></div>
+                            <span>Digital Transformation</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="item-icon small indigo"></div>
+                            <span>Technical Consulting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resources Dropdown -->
+                <div class="dropdown-section" data-section="resources">
+                    <div class="resources-layout">
+                        <div class="main-links">
+                            <div class="grid-item compact">
+                                <div class="item-icon blue small"></div>
+                                <span>Documentation</span>
+                            </div>
+                            <div class="grid-item compact">
+                                <div class="item-icon cyan small"></div>
+                                <span>API Reference</span>
+                            </div>
+                        </div>
+                        <div class="side-content">
+                            <h4>Latest from SkyBridge</h4>
+                            <p>Scaling AI in 2024: A comprehensive guide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section style="padding: 32px 0 24px;" class="fade-in delay-1">
+            <div class="container" style="text-align: center;">
+                <span class="section-tagline">Our Projects</span>
+                <h2 class="section-title">Our Projects</h2>
+                <p class="section-subtitle">Explore some of the solutions we've built for our clients.</p>
+            </div>
+        </section>
+
+        <section class="projects-section fade-in delay-1">
+            <div class="container">
+                <div class="projects-grid" id="projects-grid">
+                    <article class="project-card" data-static-project="true">
+                        <div class="project-mockup" aria-hidden="true">
+                            <div class="project-window project-window-image">
+                                <img src="assets/hubmart-project.png" alt="Hub Mart E-commerce Platform preview">
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">E-commerce Website</span>
+                            <h3 class="project-name">Hub Mart E-commerce Platform</h3>
+                            <p class="project-description">A modern online store with cart, payment system, and admin
+                                dashboard.</p>
+                            <a href="#" class="btn btn-primary" data-project-state="pending">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-card" data-static-project="true">
+                        <div class="project-mockup" aria-hidden="true">
+                            <div class="project-window project-window-image">
+                                <img src="assets/shopluxe-project.png" alt="SkyFlow Client Portal preview">
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Web App</span>
+                            <h3 class="project-name">SkyFlow Client Portal</h3>
+                            <p class="project-description">A streamlined client dashboard for onboarding, project
+                                tracking, and secure document sharing.</p>
+                            <a href="#" class="btn btn-primary" data-project-state="pending">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-card" data-static-project="true">
+                        <div class="project-mockup" aria-hidden="true">
+                            <div class="project-window project-window-image">
+                                <img src="assets/skywings-project-v2.png" alt="Elevate Brand Identity preview">
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">Branding</span>
+                            <h3 class="project-name">Elevate Brand Identity</h3>
+                            <p class="project-description">A complete visual identity system with polished brand assets
+                                for a fast-growing startup.</p>
+                            <a href="https://10308493-commits.github.io/Sky-bridge-Technologies/"
+                                class="btn btn-primary" data-project-state="live">View Project</a>
+                        </div>
+                    </article>
+                    <article class="project-card" data-static-project="true">
+                        <div class="project-mockup" aria-hidden="true">
+                            <div class="project-window project-window-image">
+                                <img src="assets/beanboutique-project.png" alt="BridgeOps Analytics Suite preview">
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <span class="project-category">SaaS Platform</span>
+                            <h3 class="project-name">BridgeOps Analytics Suite</h3>
+                            <p class="project-description">A reporting platform that turns operational data into live
+                                insights for distributed teams.</p>
+                            <a href="#" class="btn btn-primary" data-project-state="pending">View Project</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="projects-empty-state" id="projects-empty-state">
+                    No admin-uploaded projects yet. Use the admin page to add one.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo-container">
+                    <div class="logo-placeholder">
+                        <svg width="24" height="24" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="url(#footer-logo-gradient)" />
+                            <path d="M12 28L20 12L28 28" stroke="white" stroke-width="3" />
+                            <defs>
+                                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="40" y2="40">
+                                    <stop stop-color="#3D5AFE" />
+                                    <stop offset="1" stop-color="#00C6FF" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <span class="brand-name">SkyBridge <span class="accent">Technologies</span></span>
+                </div>
+                <p class="footer-desc">Building the infrastructure for the digital era since 2020.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="#">Bridge API</a></li>
+                    <li><a href="#">Cloud Sync</a></li>
+                    <li><a href="#">Security Shield</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2024 SkyBridge Technologies. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth / Sign-in Modal -->
+    <div class="modal-overlay" id="auth-modal">
+        <div class="modal-window auth-modal-window">
+            <button class="modal-close" onclick="closeSignInModal()" title="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="auth-header">
+                <h2>Welcome Back</h2>
+                <p>Sign in to your SkyBridge account</p>
+            </div>
+
+            <div class="social-auth">
+                <button class="social-btn" id="google-login">
+                    <svg width="20" height="20" viewBox="0 0 48 48">
+                        <path fill="#FFC107"
+                            d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z" />
+                        <path fill="#FF3D00"
+                            d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z" />
+                        <path fill="#4CAF50"
+                            d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z" />
+                        <path fill="#1976D2"
+                            d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571l6.19,5.238C40.483,35.535,44,30.349,44,24C44,22.659,43.862,21.35,43.611,20.083z" />
+                    </svg>
+                    Continue with Google
+                </button>
+                <button class="social-btn" id="github-login">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.362.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                    </svg>
+                    Continue with GitHub
+                </button>
+            </div>
+
+            <div class="auth-divider">
+                <span>OR</span>
+            </div>
+
+            <form id="auth-form" class="contact-form auth-form">
+                <input type="email" placeholder="Business Email" required class="form-input">
+                <input type="password" placeholder="Password" required class="form-input">
+                <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="javascript:void(0)">Start Free Trial</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Settings Modal -->
+    <div class="modal-overlay" id="settings-modal">
+        <div class="modal-window settings-modal-window">
+            <button class="modal-close" onclick="closeSettingsModal()" title="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="settings-header">
+                <h2>Account Settings</h2>
+                <p>Manage your bridge preferences and infrastructure details.</p>
+            </div>
+            <div class="settings-body">
+                <div class="settings-section">
+                    <h3>General Profile</h3>
+                    <div class="settings-row">
+                        <div class="settings-field">
+                            <label for="settings-name">Display Name</label>
+                            <input type="text" class="form-input" id="settings-name" value="John Doe"
+                                placeholder="e.g. Alexander Pierce">
+                        </div>
+                        <div class="settings-field">
+                            <label for="settings-org">Organization Name</label>
+                            <input type="text" class="form-input" id="settings-org"
+                                placeholder="e.g. SkyBridge Enterprise Ltd.">
+                        </div>
+                        <div class="settings-field">
+                            <label for="settings-workspace">Default Workspace</label>
+                            <input type="text" class="form-input" id="settings-workspace" value="Main Infrastructure"
+                                placeholder="e.g. Core-Production-Cluster">
+                        </div>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <h3>Infrastructure & Integration</h3>
+                    <div class="settings-row">
+                        <div class="settings-field">
+                            <label for="settings-region">Primary Infrastructure Region</label>
+                            <input type="text" class="form-input" id="settings-region"
+                                placeholder="e.g. AWS us-east-1 (N. Virginia)">
+                        </div>
+                        <div class="settings-field">
+                            <label for="settings-api">API Visibility Mode</label>
+                            <select class="form-input" id="settings-api" aria-label="API Key Visibility">
+                                <option>Hidden (Always mask)</option>
+                                <option>Show on hover</option>
+                                <option>Public (For local dev)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-footer">
+                <button class="btn btn-outline" onclick="closeSettingsModal()">Cancel</button>
+                <button class="btn btn-primary" id="save-settings-btn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

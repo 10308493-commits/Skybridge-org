@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="SkyBridge Technologies - Leading the future of tech solutions with innovative bridges to success.">
+    <title>SkyBridge Technologies | Premium Tech Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- Header / Navigation (Stripe-Style) -->
+    <header id="header">
+        <nav class="container nav-wrapper">
+            <div class="logo-container">
+                <div class="logo-placeholder">
+                    <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="url(#logo-gradient)" />
+                        <path d="M12 28L20 12L28 28" stroke="white" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M16 20H24" stroke="white" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <defs>
+                            <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40"
+                                gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#3D5AFE" />
+                                <stop offset="1" stop-color="#00C6FF" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="brand-name">SkyBridge <span class="accent">Technologies</span></span>
+            </div>
+
+            <div class="nav-links-container" id="nav-links">
+                <ul class="main-nav">
+                    <li class="has-dropdown" data-dropdown="solutions">
+                        <a href="#solutions" class="nav-item">Solutions <span class="nav-arrow"></span></a>
+                    </li>
+                    <li class="has-dropdown" data-dropdown="services">
+                        <a href="#services" class="nav-item">Services <span class="nav-arrow"></span></a>
+                    </li>
+                    <li class="has-dropdown" data-dropdown="resources">
+                        <a href="Resources.html" class="nav-item">Resources <span class="nav-arrow"></span></a>
+                    </li>
+                    <li><a href="Portfolio.html" class="nav-item">Portfolio</a></li>
+                </ul>
+                <div class="mobile-menu-actions">
+                    <a href="Admin.html" class="btn btn-outline">Admin</a>
+                    <button onclick="openSignInModal()" class="btn-text">Sign In</button>
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+
+            <div class="nav-actions">
+                <div id="public-actions" class="public-nav-group fade-in">
+                    <a href="Admin.html" class="btn btn-outline">Admin</a>
+                    <button id="header-signin" onclick="openSignInModal()" class="btn-text">Sign In</button>
+                    <a id="header-getstarted" href="#contact" class="btn btn-primary">Get Started</a>
+                </div>
+                <div class="user-profile-wrapper" id="user-profile-wrapper">
+                    <div class="user-profile" id="user-profile">
+                        <div class="user-avatar">JD</div>
+                        <span class="user-name">John Doe</span>
+                    </div>
+                    <div class="user-dropdown" id="user-dropdown">
+                        <div class="dropdown-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            My Account
+                        </div>
+                        <div class="dropdown-item" id="settings-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                            Settings
+                        </div>
+                        <div class="dropdown-item logout" id="logout-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                            Log Out
+                        </div>
+                    </div>
+                </div>
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Dropdown Popover Container -->
+        <div class="dropdown-popover" id="dropdown-popover">
+            <div class="popover-bg"></div>
+            <div class="popover-arrow"></div>
+            <div class="popover-content">
+                <!-- Solutions Dropdown -->
+                <div class="dropdown-section" data-section="solutions">
+                    <div class="dropdown-grid">
+                        <div class="grid-item">
+                            <div class="item-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                                </svg></div>
+                            <div class="item-text">
+                                <h3>Cloud Modernization</h3>
+                                <p>Bridge legacy systems with scalable cloud tech.</p>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="item-icon cyan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                                </svg></div>
+                            <div class="item-text">
+                                <h3>AI & Integration</h3>
+                                <p>Implement intelligent layers for automation.</p>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="item-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                </svg></div>
+                            <div class="item-text">
+                                <h3>Cyber Security</h3>
+                                <p>Proactive defense for digital assets.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services Dropdown -->
+                <div class="dropdown-section" data-section="services">
+                    <div class="simple-list">
+                        <div class="list-item">
+                            <div class="item-icon small blue"></div>
+                            <span>Websites</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="item-icon small cyan"></div>
+                            <span>Mobile Apps</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="item-icon small purple"></div>
+                            <span>Software</span>
+                        </div>
+                        <div class="list-item">
+                            <div class="item-icon small indigo"></div>
+                            <span>Hardware & CCTV Installations</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resources Dropdown -->
+                <div class="dropdown-section" data-section="resources">
+                    <div class="resources-layout">
+                        <div class="main-links">
+                            <div class="grid-item compact">
+                                <div class="item-icon blue small"></div>
+                                <span>Documentation</span>
+                            </div>
+                            <div class="grid-item compact">
+                                <div class="item-icon cyan small"></div>
+                                <span>API Reference</span>
+                            </div>
+                        </div>
+                        <div class="side-content">
+                            <h4>Latest from SkyBridge</h4>
+                            <p>Scaling AI in 2024: A comprehensive guide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg-container">
+                <div class="mesh-gradient"></div>
+                <div class="hero-grid-overlay"></div>
+                <div class="glow-orb orb-1"></div>
+                <div class="glow-orb orb-2"></div>
+            </div>
+            <div class="container hero-wrapper">
+                <div class="hero-content fade-in">
+                    <div class="badge-new fade-in delay-1">
+                        <span class="badge-text">New: Bridge API 2.0 is live</span>
+                        <span class="badge-dot"></span>
+                    </div>
+                    <h1 class="fade-in delay-2">Digital <span class="text-gradient">Infrastructure</span> for the next
+                        era</h1>
+                    <p class="fade-in delay-3">SkyBridge provides the essential layers for modern digital
+                        transformation. Build, scale, and secure your tech ecosystem with our unified platform.</p>
+                    <div class="hero-actions fade-in delay-4">
+                        <button onclick="openSignInModal()" class="btn btn-primary btn-lg">Start Building Now <svg class="btn-icon"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg></button>
+                        <a href="#contact" class="btn btn-outline btn-lg">Contact Sales <svg class="btn-icon"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="hero-visual fade-in delay-1">
+                    <div class="mockup-container">
+                        <div class="mockup-frame">
+                            <div class="mockup-header">
+                                <div class="mockup-dots"><span></span><span></span><span></span></div>
+                                <div class="mockup-address">skybridge.tech/dashboard</div>
+                            </div>
+                            <div class="mockup-body">
+                                <div class="mockup-sidebar">
+                                    <div class="sidebar-item active"></div>
+                                    <div class="sidebar-item"></div>
+                                    <div class="sidebar-item"></div>
+                                    <div class="sidebar-item"></div>
+                                </div>
+                                <div class="mockup-main">
+                                    <div class="mockup-line-chart">
+                                        <svg viewBox="0 0 200 80" class="chart-svg">
+                                            <path d="M0,60 Q20,20 40,50 T80,30 T120,60 T160,20 T200,40"
+                                                stroke="var(--primary)" fill="none" stroke-width="3" />
+                                            <path d="M0,60 Q20,20 40,50 T80,30 T120,60 T160,20 T200,40 V80 H0 Z"
+                                                fill="url(#chart-gradient)" />
+                                            <defs>
+                                                <linearGradient id="chart-gradient" x1="0" y1="0" x2="0" y2="1">
+                                                    <stop offset="0%" stop-color="var(--primary)" stop-opacity="0.2" />
+                                                    <stop offset="100%" stop-color="var(--primary)" stop-opacity="0" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <div class="mockup-grid">
+                                        <div class="grid-box"></div>
+                                        <div class="grid-box"></div>
+                                        <div class="grid-box"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="floating-card card-1">
+                            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg></div>
+                            <div class="card-text">
+                                <span>Security Check</span>
+                                <small>All systems operational</small>
+                            </div>
+                        </div>
+                        <div class="floating-card card-2">
+                            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M21 12V7a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 7v10a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 17v-5z" />
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                                    <line x1="12" y1="22.08" x2="12" y2="12" />
+                                </svg></div>
+                            <div class="card-text">
+                                <span>Integration</span>
+                                <small>Seamless API connected</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credibility Section -->
+        <section class="credibility-section">
+            <div class="container">
+                <div class="credibility-wrapper">
+                    <!-- Stats Grid -->
+                    <div class="stats-grid fade-in">
+                        <div class="stat-item">
+                            <span class="stat-number">99.99<span class="stat-suffix">%</span></span>
+                            <span class="stat-label">System Uptime</span>
+                            <p class="stat-desc">Guaranteed reliability for global operations.</p>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">250<span class="stat-suffix">M+</span></span>
+                            <span class="stat-label">Daily API Calls</span>
+                            <p class="stat-desc">Scaling seamlessly with your growth.</p>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">12<span class="stat-suffix">B+</span></span>
+                            <span class="stat-label">Annual Volume</span>
+                            <p class="stat-desc">Trusted with high-stakes transactions.</p>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">500<span class="stat-suffix">+</span></span>
+                            <span class="stat-label">Enterprise Clients</span>
+                            <p class="stat-desc">Powering the world's leading tech stacks.</p>
+                        </div>
+                    </div>
+
+                    <!-- Featured Testimonial -->
+                    <div class="testimonial-container fade-in delay-2">
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14.6667 24H10.6667C10.1362 24 9.62753 23.7893 9.25245 23.4142C8.87738 23.0391 8.66667 22.5304 8.66667 22V18C8.66667 17.4696 8.87738 16.9609 9.25245 16.5858C9.62753 16.2107 10.1362 16 10.6667 16H18.6667V22C18.6667 24.1217 17.8238 26.1566 16.3235 27.6569C14.8232 29.1571 12.7884 30 10.6667 30H8.66667"
+                                        stroke="var(--primary)" stroke-width="3" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M30.6667 24H26.6667C26.1362 24 25.6275 23.7893 25.2525 23.4142C24.8774 23.0391 24.6667 22.5304 24.6667 22V18C24.6667 17.4696 24.8774 16.9609 25.2525 16.5858C25.6275 16.2107 26.1362 16 26.6667 16H34.6667V22C34.6667 24.1217 33.8238 26.1566 32.3235 27.6569C30.8232 29.1571 28.7884 30 26.6667 30H24.6667"
+                                        stroke="var(--primary)" stroke-width="3" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <p class="quote-text">"SkyBridge Technologies has been transformative for our
+                                infrastructure. Their API reliability and security standards are the best we've seen in
+                                the industry."</p>
+                            <div class="quote-author">
+                                <div class="author-info">
+                                    <span class="author-name">Sarah Chen</span>
+                                    <span class="author-role">CTO at Globex Corp</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trusted By Section (Moved here for better visual rhythm) -->
+            <div class="trusted-by fade-in delay-3">
+                <div class="container">
+                    <p class="trusted-title">Providing infrastructure for world-class teams</p>
+                    <div class="logo-strip">
+                        <div class="logo-item">GLOBEX</div>
+                        <div class="logo-item">ACME</div>
+                        <div class="logo-item">UMBRELLA</div>
+                        <div class="logo-item">STARK</div>
+                        <div class="logo-item">WAYNE</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="mission-section" id="mission" aria-labelledby="mission-heading">
+            <div class="container">
+                <div class="mission-inner fade-in">
+                    <span class="section-tagline">Our Mission</span>
+                    <h2 id="mission-heading" class="section-title mission-title">Smart solutions that <span
+                            class="text-gradient">bridge the future</span></h2>
+                    <div class="mission-copy">
+                        <p class="mission-lead">At SkyBridge Technologies, our mission is to empower businesses with
+                            smart, reliable, and scalable technology solutions that simplify operations, improve
+                            efficiency, and drive growth.</p>
+                        <p class="mission-support">We are committed to delivering innovative digital systems that bridge
+                            the gap between traditional business practices and modern technological advancement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision Section -->
+        <section class="vision-section" id="vision" aria-labelledby="vision-heading">
+            <div class="container">
+                <div class="vision-inner fade-in">
+                    <span class="section-tagline">Our Vision</span>
+                    <h2 id="vision-heading" class="section-title vision-title">Transforming business on a <span
+                            class="text-gradient">global scale</span></h2>
+                    <div class="vision-copy">
+                        <p class="vision-lead">Our vision is to become a leading technology solutions provider in
+                            Africa and across the world, recognized for building intelligent platforms and systems that
+                            transform how businesses operate, compete, and grow in a digital world.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section (What We Do) -->
+        <section class="services-section" id="services">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <span class="section-tagline">What We Do</span>
+                    <h2 class="section-title">Enabling the next generation of <span class="text-gradient">digital
+                            possibilities</span></h2>
+                    <p class="section-subtitle">Websites, mobile apps, software, hardware, CCTV installations, and
+                        more.</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Websites -->
+                    <div class="service-card fade-in delay-1">
+                        <div class="service-icon blue-glow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                                <path d="M9 3v18M15 3v18M3 9h18M3 15h18" />
+                            </svg>
+                        </div>
+                        <div class="service-content">
+                            <h3>Websites</h3>
+                            <p>Modern business websites built for speed, clarity, and a strong online presence.</p>
+                            <ul class="service-list">
+                                <li>Business Websites</li>
+                                <li>E-commerce Platforms</li>
+                                <li>Landing Pages</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Apps -->
+                    <div class="service-card fade-in delay-2">
+                        <div class="service-icon purple-glow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="7" y="2" width="10" height="20" rx="2" ry="2" />
+                                <path d="M11 18h2" />
+                            </svg>
+                        </div>
+                        <div class="service-content">
+                            <h3>Mobile Apps</h3>
+                            <p>Custom mobile applications designed to deliver smooth user experiences across devices.</p>
+                            <ul class="service-list">
+                                <li>Android Apps</li>
+                                <li>iOS Apps</li>
+                                <li>Cross-Platform Builds</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Software -->
+                    <div class="service-card fade-in delay-3">
+                        <div class="service-icon cyan-glow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
+                                <path d="M9 9h6M9 12h6M9 15h4" />
+                            </svg>
+                        </div>
+                        <div class="service-content">
+                            <h3>Software</h3>
+                            <p>Tailored software solutions that simplify operations and support business growth.</p>
+                            <ul class="service-list">
+                                <li>Custom Software</li>
+                                <li>Business Systems</li>
+                                <li>Software Maintenance</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Hardware & CCTV -->
+                    <div class="service-card fade-in delay-4">
+                        <div class="service-icon blue-glow">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 11l18-5-5 10-3-3-4 4" />
+                                <path d="M13 13l4 8" />
+                            </svg>
+                        </div>
+                        <div class="service-content">
+                            <h3>Hardware & CCTV Installations</h3>
+                            <p>Reliable hardware deployment and CCTV installation services for secure, connected spaces.</p>
+                            <ul class="service-list">
+                                <li>Device Setup</li>
+                                <li>Surveillance Systems</li>
+                                <li>On-site Installation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section (How It Works) -->
+        <section class="process-section" id="process">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <span class="section-tagline">Seamless Implementation</span>
+                    <h2 class="section-title">A <span class="text-gradient">systematic approach</span> to your success
+                    </h2>
+                    <p class="section-subtitle">We follow a proven framework to ensure every bridge we build is secure,
+                        scalable, and built to last.</p>
+                </div>
+
+                <div class="process-steps">
+                    <!-- Step 1 -->
+                    <div class="step-item fade-in delay-1">
+                        <div class="step-number-container">
+                            <div class="step-number">01</div>
+                            <div class="step-line"></div>
+                        </div>
+                        <div class="step-content">
+                            <h3>Discovery & Audit</h3>
+                            <p>We perform a deep dive into your current legacy systems and identify critical technical
+                                gaps.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-item fade-in delay-2">
+                        <div class="step-number-container">
+                            <div class="step-number">02</div>
+                            <div class="step-line"></div>
+                        </div>
+                        <div class="step-content">
+                            <h3>Strategic Blueprint</h3>
+                            <p>Our engineers design a custom cloud-native architecture optimized for your specific
+                                needs.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-item fade-in delay-3">
+                        <div class="step-number-container">
+                            <div class="step-number">03</div>
+                            <div class="step-line"></div>
+                        </div>
+                        <div class="step-content">
+                            <h3>Integration & Build</h3>
+                            <p>We implement the bridge layers, migrating assets securely with zero downtime for your
+                                users.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="step-item fade-in delay-4">
+                        <div class="step-number-container">
+                            <div class="step-number">04</div>
+                        </div>
+                        <div class="step-content">
+                            <h3>Managed Optimization</h3>
+                            <p>Continuous monitoring and performance tuning to keep you at the peak of technical
+                                efficiency.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-wall" id="testimonials">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <span class="section-tagline">Testimonials</span>
+                    <h2 class="section-title">Voice of our <span class="text-gradient">partners</span></h2>
+                    <p class="section-subtitle">Real results from the engineering teams and leaders driving modern
+                        digital transformation.</p>
+                </div>
+
+                <div class="testimonials-grid">
+                    <!-- Partner 1 -->
+                    <div class="testimonial-card-small fade-in delay-1">
+                        <div class="quote-icon-small">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M10 11H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4v6zm10 0h-4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4v6z" />
+                                <path d="M10 11c0 2.21-1.79 4-4 4M20 11c0 2.21-1.79 4-4 4" />
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">"SkyBridge didn't just rebuild our app; they rebuilt our entire
+                            internal culture around performance and security."</p>
+                        <div class="author-meta">
+                            <span class="author-name">Marcus Thorne</span>
+                            <span class="author-role">CEO at Apex Solutions</span>
+                        </div>
+                    </div>
+
+                    <!-- Partner 2 -->
+                    <div class="testimonial-card-small fade-in delay-2">
+                        <div class="quote-icon-small">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M10 11H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4v6zm10 0h-4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4v6z" />
+                                <path d="M10 11c0 2.21-1.79 4-4 4M20 11c0 2.21-1.79 4-4 4" />
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">"The most seamless migration I've ever overseen. Technical debt
+                            disappeared overnight, and our engineers are happier."</p>
+                        <div class="author-meta">
+                            <span class="author-name">Lena Rossi</span>
+                            <span class="author-role">Director of Eng. at Quantum Labs</span>
+                        </div>
+                    </div>
+
+                    <!-- Partner 3 -->
+                    <div class="testimonial-card-small fade-in delay-3">
+                        <div class="quote-icon-small">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M10 11H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4v6zm10 0h-4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4v6z" />
+                                <path d="M10 11c0 2.21-1.79 4-4 4M20 11c0 2.21-1.79 4-4 4" />
+                            </svg>
+                        </div>
+                        <p class="testimonial-text">"The level of security and uptime we've achieved is unmatched.
+                            SkyBridge is a true partner for our global fintech growth."</p>
+                        <div class="author-meta">
+                            <span class="author-name">David Wu</span>
+                            <span class="author-role">Head of Product at Horizon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-wrapper fade-in">
+                    <div class="cta-content">
+                        <h2>Ready to <span class="text-white">bridge the future?</span></h2>
+                        <p>Join hundreds of enterprise teams building the next generation of digital infrastructure.
+                            Let's build your bridge to success together.</p>
+                        <div class="cta-actions">
+                            <button onclick="openSignInModal()" class="btn btn-white btn-lg">Start Your Project <svg class="btn-icon"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg></button>
+                            <a href="#contact" class="btn btn-outline-white btn-lg">Contact Sales</a>
+                        </div>
+                    </div>
+                    <div class="cta-visual">
+                        <!-- Abstract digital bridge element -->
+                        <div class="abstract-connector">
+                            <div class="dot"></div>
+                            <div class="line"></div>
+                            <div class="dot second"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Preview Section -->
+        <section class="contact-preview-section" id="contact">
+            <div class="container">
+                <div class="contact-preview-grid">
+                    <!-- Left Side: Direct Contact -->
+                    <div class="contact-direct fade-in">
+                        <span class="section-tagline">Get in Touch</span>
+                        <h2 class="section-title">Start a <span class="text-gradient">conversation</span></h2>
+                        <p class="section-subtitle">Reach out directly via email or message us on WhatsApp for an
+                            instant response.</p>
+
+                        <div class="direct-methods">
+                            <a href="mailto:hello@skybridge.tech" class="method-card">
+                                <div class="method-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                        <polyline points="22,6 12,13 2,6" />
+                                    </svg></div>
+                                <div class="method-info">
+                                    <span>Email us</span>
+                                    <strong>hello@skybridge.tech</strong>
+                                </div>
+                            </a>
+
+                            <a href="https://wa.me/1234567890" class="method-card active">
+                                <div class="method-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                    </svg></div>
+                                <div class="method-info">
+                                    <span>WhatsApp</span>
+                                    <strong>Message Now</strong>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Mini Form -->
+                    <div class="contact-form-mini fade-in delay-2">
+                        <form class="mini-form" id="contact-form-mini">
+                            <div class="form-group">
+                                <label for="mini-name">Name</label>
+                                <input type="text" id="mini-name" name="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mini-email">Work Email</label>
+                                <input type="email" id="mini-email" name="email" placeholder="john@company.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mini-project">Project Type</label>
+                                <select id="mini-project" name="subject">
+                                    <option value="web">Web Development</option>
+                                    <option value="uiux">UI/UX Design</option>
+                                    <option value="it">IT Support</option>
+                                    <option value="other">Other Inquiry</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="mini-message">Brief Message</label>
+                                <textarea id="mini-message" name="message" placeholder="How can we help you?" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Send Inquiry <svg class="btn-icon"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo-container">
+                    <div class="logo-placeholder">
+                        <svg width="24" height="24" viewBox="0 0 40 40" fill="none">
+                            <rect width="40" height="40" rx="8" fill="url(#footer-logo-gradient)" />
+                            <path d="M12 28L20 12L28 28" stroke="white" stroke-width="3" />
+                            <defs>
+                                <linearGradient id="footer-logo-gradient" x1="0" y1="0" x2="40" y2="40">
+                                    <stop stop-color="#3D5AFE" />
+                                    <stop offset="1" stop-color="#00C6FF" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <span class="brand-name">SkyBridge <span class="accent">Technologies</span></span>
+                </div>
+                <p class="footer-desc">Building the infrastructure for the digital era since 2020.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="#">Bridge API</a></li>
+                    <li><a href="#">Cloud Sync</a></li>
+                    <li><a href="#">Security Shield</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2024 SkyBridge Technologies. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Welcome Module -->
+    <div class="modal-overlay welcome-overlay" id="welcome-modal">
+        <div class="modal-window welcome-window">
+            <button class="modal-close" onclick="closeWelcomeModal()" title="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="welcome-image">
+                <div class="welcome-orb"></div>
+                <svg width="60" height="60" viewBox="0 0 40 40" fill="none">
+                    <rect width="40" height="40" rx="12" fill="url(#welcome-grad)" />
+                    <path d="M12 28L20 12L28 28M16 20H24" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                        <linearGradient id="welcome-grad" x1="0" y1="0" x2="40" y2="40">
+                            <stop stop-color="#3D5AFE" />
+                            <stop offset="1" stop-color="#00C6FF" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="welcome-body">
+                <h2>Infrastructure for the Next Era</h2>
+                <p>Welcome to SkyBridge Technologies. We build the digital bridges that connect modern enterprise with future-ready infrastructure.</p>
+                <div class="welcome-actions">
+                    <button class="btn btn-primary btn-lg" onclick="closeWelcomeModal()">Explore Platform</button>
+                    <button class="btn btn-text" onclick="window.location.href='Resources.html'">View Documentation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth / Sign-in Modal -->
+    <div class="modal-overlay" id="auth-modal">
+        <div class="modal-window auth-modal-window">
+            <button class="modal-close" onclick="closeSignInModal()" title="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="auth-header">
+                <h2>Welcome Back</h2>
+                <p>Sign in to your SkyBridge account</p>
+            </div>
+            
+            <div class="social-auth">
+                <button class="social-btn" id="google-login">
+                    <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571l6.19,5.238C40.483,35.535,44,30.349,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
+                    Continue with Google
+                </button>
+                <button class="social-btn" id="github-login">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.362.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    Continue with GitHub
+                </button>
+            </div>
+
+            <div class="auth-divider">
+                <span>OR</span>
+            </div>
+
+            <form id="auth-form" class="contact-form auth-form">
+                <input type="email" placeholder="Business Email" required class="form-input">
+                <input type="password" placeholder="Password" required class="form-input">
+                <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="javascript:void(0)">Start Free Trial</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Settings Modal -->
+    <div class="modal-overlay" id="settings-modal">
+        <div class="modal-window settings-modal-window">
+            <button class="modal-close" onclick="closeSettingsModal()" title="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="settings-header">
+                <h2>Account Settings</h2>
+                <p>Manage your bridge preferences and infrastructure details.</p>
+            </div>
+            <div class="settings-body">
+                <div class="settings-section">
+                    <h3>General Profile</h3>
+                    <div class="settings-row">
+                        <div class="settings-field">
+                            <label for="settings-name">Display Name</label>
+                            <input type="text" class="form-input" id="settings-name" value="John Doe" placeholder="e.g. Alexander Pierce">
+                        </div>
+                        <div class="settings-field">
+                            <label for="settings-org">Organization Name</label>
+                            <input type="text" class="form-input" id="settings-org" placeholder="e.g. SkyBridge Enterprise Ltd.">
+                        </div>
+                        <div class="settings-field">
+                            <label for="settings-workspace">Default Workspace</label>
+                            <input type="text" class="form-input" id="settings-workspace" value="Main Infrastructure" placeholder="e.g. Core-Production-Cluster">
+                        </div>
+                    </div>
+                </div>
+                <div class="settings-section">
+                    <h3>Infrastructure & Integration</h3>
+                    <div class="settings-row">
+                        <div class="settings-field">
+                            <label for="settings-region">Primary Infrastructure Region</label>
+                            <input type="text" class="form-input" id="settings-region" placeholder="e.g. AWS us-east-1 (N. Virginia)">
+                        </div>
+                        <div class="settings-field">
+                            <label for="settings-api">API Visibility Mode</label>
+                            <select class="form-input" id="settings-api" aria-label="API Key Visibility">
+                                <option>Hidden (Always mask)</option>
+                                <option>Show on hover</option>
+                                <option>Public (For local dev)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-footer">
+                <button class="btn btn-outline" onclick="closeSettingsModal()">Cancel</button>
+                <button class="btn btn-primary" id="save-settings-btn">Save Changes</button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
